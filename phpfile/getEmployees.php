@@ -2,12 +2,12 @@
 
 include 'databaseConfig.php';
 
-// $employee = $_POST['employee'];
+$employee = $_POST['username'];
 
 $conn = mysqli_connect($HostName,$HostUser,$HostPass,$DatabaseName);
 
 $stmt = $conn->prepare("SELECT id_pickeo,employee, Nombre, planta, requisicion, material_number, qty_to_pick, zone_ma, rack_location, po_task_id FROM picking,workin,empleados 
-                        WHERE workin.employee='109155' AND workin.employee=empleados.codigo_persona AND left(rack_location,1) = workin.plant AND date(date_register) = date(NOW()) 
+                        WHERE workin.employee='$employee' AND workin.employee=empleados.codigo_persona AND left(rack_location,1) = workin.plant AND date(date_register) = date(NOW()) 
                         AND date(date_asign) = date(NOW()) ORDER BY picking.rack_location ASC");
 
 $stmt->execute();
