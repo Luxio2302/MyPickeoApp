@@ -5,7 +5,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 object RetrofitHelper {
 
-    val baseUrl = "http://172.30.99.149/mypickeoapp/phpfile/"
+    val baseUrl = "http://192.168.100.17/phpfile/"
     fun getInstance():Retrofit{
         return Retrofit.Builder().baseUrl(baseUrl)
             .addConverterFactory(GsonConverterFactory.create())

@@ -40,17 +40,19 @@ class MainActivity : AppCompatActivity() {
     var questionsList : MaterialListResponse? = null
 
     companion object{
-
         var result = 0
         var notfound = 0
         var totalQuestions = 0
-
     }
+
+    var userName: String = ""
 
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        userName = intent.extras!!.getString("username").toString()
 
         txtMaterial=findViewById(R.id.txtMaterial)
         txtName=findViewById(R.id.txtname)
@@ -139,7 +141,7 @@ class MainActivity : AppCompatActivity() {
         val quesApi=RetrofitHelper.getInstance().create(EmployeeApi::class.java)
 
         GlobalScope.launch {
-            val result=quesApi.getQues()
+            val result=quesApi.getQues(userName)
 
             if (result!=null){
 
