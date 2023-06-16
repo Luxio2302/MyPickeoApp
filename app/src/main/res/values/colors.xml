@@ -2,5 +2,9 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="blue">#49C4FB</color>
+    <color name="blue">#93D5F3</color>
+    <color name="gray">#E2A0A9AE</color>
+    <color name="fond">#5FAED1</color>
+    <color name="lavender">#000080</color>
+    <color name="picking">#EBF2F6</color>
 </resources>

@@ -45,7 +45,7 @@ class UserSession : AppCompatActivity() {
                     startActivity(intent)
                     finish()
                 } else {
-                    Toast.makeText(applicationContext, "El usuario no existe", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(applicationContext, "No cuentas con material para pickear", Toast.LENGTH_SHORT).show()
                 }
             }
         }

@@ -17,9 +17,22 @@ interface EmployeeApi {
     ):Response<MaterialListResponse>
 
     @FormUrlEncoded
+    @POST("counts.php")
+    suspend fun getCoun(
+        @Field("username") userName: String
+    ):Response<MaterialListResponse>
+
+    @FormUrlEncoded
     @POST("login.php")
     suspend fun login(
         @Field("username") userName: String
+    ): Response<String>
+
+    @FormUrlEncoded
+    @POST("update.php")
+    suspend fun updatereg(
+        @Field("idreg") idReg: String,
+        @Field("status") Status: String
     ): Response<String>
 
 }

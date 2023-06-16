@@ -1,6 +1,7 @@
 package com.example.mypickeoapp
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -16,11 +17,13 @@ class ResultActivity : AppCompatActivity() {
         var txtNot=findViewById<TextView>(R.id.txtNot)
         var btnBack=findViewById<Button>(R.id.btnBack)
 
-        txtAnswer.text="Your Score is : "+MainActivity.result+"/"+MainActivity.totalQuestions
-        txtNot.text="Your Material Not Found Is : "+MainActivity.notfound+"/"+MainActivity.totalQuestions
+        txtAnswer.text="Materiales Pickeados : "+MainActivity.found+"/"+MainActivity.totalQuestions
+        txtNot.text="Materiales No Encontrados : "+MainActivity.notfound+"/"+MainActivity.totalQuestions
 
         btnBack.setOnClickListener(){
-            onBackPressed()
+            val intent = Intent(applicationContext, UserSession::class.java)
+            startActivity(intent)
+            finish()
         }
     }
 }
